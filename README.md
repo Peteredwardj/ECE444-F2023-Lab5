@@ -1,5 +1,7 @@
 # ECE444-F2023-Lab5
 
+This repo is taken from examples in https://github.com/mjhea0/flaskr-tdd
+
 <h2>Test-Driven Development</h2>
 
 __Pros__:
@@ -19,6 +21,6 @@ __Cons:__
 
 **May be difficult to maintain**<br>As time goes by, the codebase may get more involved and complicated for example implementation of something might also affect other implementations causing some previous tests to fail. With this, it might be difficult to maintain the tests as they could get more and more complex.
 
-**Overtesting**<br>Some implementations may not require tests, but developers could easily get carried away and write tests that may not even be necessary reducing their productivity in working on the implementation itself.
+**Overtesting**<br>Some implementations may not require tests, but developers could easily get carried away and write tests that may not even be necessary reducing their productivity in working on the implementation itself. An example of this would be a writing test for a function that prints something, the printing is something obvious. 
 
 **Requires learning for correct implementation**<br> Developers might have to learn how to implement tests for the stack they are working on which might not be intuitive, and developers will also have to learn what tests are considered useful and not for their codebase which could be a hassle 
