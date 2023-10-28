@@ -1,4 +1,3 @@
-import os
 import pytest
 from pathlib import Path
 import json
@@ -31,6 +30,7 @@ def login(client, username, password):
 def logout(client):
     """Logout helper function"""
     return client.get("/logout", follow_redirects=True)
+
 
 def search(client, query):
     """Search helper function"""
