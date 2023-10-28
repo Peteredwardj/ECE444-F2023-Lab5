@@ -32,6 +32,13 @@ def logout(client):
     """Logout helper function"""
     return client.get("/logout", follow_redirects=True)
 
+def search(client, query):
+    """Search helper function"""
+    return client.get(
+        "/search",
+        data=dict(query=query),
+        follow_redirects=True)
+
 
 def test_index(client):
     response = client.get("/", content_type="html/text")
@@ -80,3 +87,9 @@ def test_delete_message(client):
     rv = client.get('/delete/1')
     data = json.loads(rv.data)
     assert data["status"] == 1
+
+
+def test_search(client):
+    """Ensure search endpoint works properly"""
+    rv = search(client, "something")
+    assert rv.status_code == 200
