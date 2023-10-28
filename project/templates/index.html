@@ -23,11 +23,7 @@
       {% for message in get_flashed_messages() %}
       <div class="flash">{{ message }}</div>
       {% endfor %} {% block body %}{% endblock %} {% if session.logged_in %}
-      <form
-        action="{{ url_for('add_entry') }}"
-        method="post"
-        class="add-entry"
-      >
+      <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
         <dl>
           <dt>Title:</dt>
           <dd><input type="text" size="30" name="title" /></dd>
@@ -40,8 +36,8 @@
 
       <ul class="entries">
         {% for entry in entries %}
-        <li>
-          <h2>{{ entry.title }}</h2>
+        <li class="entry">
+          <h2 id="{{ entry.id }}">{{ entry.title }}</h2>
           {{ entry.text|safe }}
         </li>
         {% else %}
@@ -49,5 +45,9 @@
         {% endfor %}
       </ul>
     </div>
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='main.js') }}"
+    ></script>
   </body>
 </html>
